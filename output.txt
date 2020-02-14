@@ -1,0 +1,34 @@
+Player 1's turn:
+Please type an x coord (0,2)
+0
+Please type a y coord (0,2)
+0
+XEE
+EEE
+EEE
+Player 2's turn:
+Please type an x coord (0,2)
+0
+Please type a y coord (0,2)
+2
+XEE
+EEE
+OEE
+Player 1's turn:
+Please type an x coord (0,2)
+1
+Please type a y coord (0,2)
+1
+XEE
+EXE
+OEE
+Player 2's turn:
+Please type an x coord (0,2)
+2
+Please type a y coord (0,2)
+0
+XEO
+EXE
+OEE
+Player 1's turn:
+Please type an x coord (0,2)
