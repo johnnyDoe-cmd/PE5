@@ -7,7 +7,7 @@ void DisplayBoard(int** board){
 			cout<<board[i][j];
 		}
 	}
-	cout<<endl;
+	cout<<endl; 
 }
 int main(){
 
