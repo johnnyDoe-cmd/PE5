@@ -1,8 +1,17 @@
-int** CreateBoard(){
-	return int x[3][3];
+#include <iostream>
+#include <vector>
+using namespace std;
+// Name:Travis Cochran
+// Assignment PE4p2
+
+vector<vector<int> > CreateBoard(){
+	vector<vector<int> > x{ { 2, 2, 2 }, 
+                               { 2, 2, 2 }, 
+                               { 2, 2, 2 } }; 
+	return x;
 }
-void DisplayBoard(int** tmp){
-	for(int i = 0; i < 3; i++){
+void DisplayBoard(vector<vector<int> > tmp){
+	for(int i =0; i < 3; i++){
 		for(int j = 0; j < 3; j++){
 			if(tmp[i][j] == 0){
 				cout<<"O";
@@ -11,25 +20,49 @@ void DisplayBoard(int** tmp){
 				cout<<"X";
 			}
 			else{
-				cout<<" ";
+				cout<<"E";
 			}
 		}
 		cout<<endl;
 	}
 
 }
-int* GetPlayerChoice(){
-	int ans = [2];
-	cout<<"Please type an x coord (0,3)"<<endl;
-	cin>>ans[0];
-	cout<<"Please type a y coord (0,3)"<<endl;
-	cin>>ans[1];
+vector<int> GetPlayerChoice(){
+	int tmp;
+	vector<int> ans;
+	cout<<"Please type an x coord (0,2)"<<endl;
+	cin>>tmp;
+	ans.push_back(tmp);
+	cout<<"Please type a y coord (0,2)"<<endl;
+	cin>>tmp;
+	ans.push_back(tmp);
 	return ans;
 }
-int** PlaceMarker(int tmp**,int x,int y,int type){
+vector<vector<int> > PlaceMarker(vector<vector<int> > tmp,int x,int y,int type){
 	tmp[x][y] = type;
+	return tmp;
 }
 int main(){
-
+	//used to change player symbol
+	vector<vector<int> > board = CreateBoard();
+	vector<int> choice1;
+	vector<int> choice2;
+	int counter = 1;
+	bool done = false;
+	while(done != true){
+		//player1
+		cout<<"Player 1's turn:"<<endl;
+		choice1 = GetPlayerChoice();
+		board = PlaceMarker(board,choice1[1],choice1[0],counter%2);
+		DisplayBoard(board);
+		counter++;
+		//player2
+		cout<<"Player 2's turn:"<<endl;
+		choice2 = GetPlayerChoice();
+		board = PlaceMarker(board,choice2[1],choice2[0],counter%2);
+		counter++;
+		DisplayBoard(board);
+	}
 	
 }
+
